@@ -22,7 +22,7 @@ public class StudentService {
 		return studentRepository.findAll();
 	}
 
-	public  addNewStudent(Student student) {
+	public void addNewStudent(Student student) {
 		Optional<Student> studentByEmail = studentRepository.findStudentByEmail(student.getEmail());
 		if(studentByEmail.isPresent()) {
 			throw new IllegalStateException("email taken");
